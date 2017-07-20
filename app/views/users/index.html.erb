@@ -28,4 +28,13 @@
 
 <br>
 
+
+<%= form_tag contact_me_path do %>
+  <%= text_field_tag :name, "Name" %>
+  <%= text_field_tag :email, "Email" %>
+  <%= text_field_tag :username, "Username" %>
+  <%= submit_tag "Contact Me" %>
+
+<% end %>
+
 <%= link_to 'New User', new_user_path %>

@@ -17,6 +17,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def contact_me
+    @user = User.create(name: params[:name], email: params[:email], username: params[:username])
+    #Tell app to send an email to the user
+        UserMailer.welcome_email(@user).deliver_now
+    redirect_back(fallback_location: root_path)
+  end  
   # GET /users/1/edit
   def edit
   end
